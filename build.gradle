@@ -29,3 +29,24 @@ jacocoTestReport {
 		html.outputLocation=layout.buildDirectory.dir('reports/jacoco/test')
 	}
 }
+
+jacocoTestCoverageVerification {
+	violationRules {
+		rule {
+			element = 'CLASS'
+			includes = ['com.example.*'] // adjust this to your package
+			limit {
+				counter = 'LINE'
+				value = 'COVEREDRATIO'
+				minimum = 0.80.toBigDecimal() // 80% line coverage
+			}
+			limit {
+				counter = 'BRANCH'
+				value = 'COVEREDRATIO'
+				minimum = 0.70.toBigDecimal() // 70% branch coverage
+			}
+		}
+	}
+}
+
+check.dependsOn jacocoTestCoverageVerification
