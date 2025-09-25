@@ -119,4 +119,18 @@ class CalculatorTest {
         assertThat(result).isEqualTo(expected);
     }
 
+    @Test
+    void ensembleChiffre_devrait_retouner_ensemble_chiffre_nombre_zero()
+    {
+        //GIVEN
+        int nombre = 0;
+        Set<Integer> expected = Set.of(0);
+
+        //WHEN
+        Set<Integer> result = new Calculator().ensembleChiffre(nombre);
+
+        //THEN
+        assertThat(result).isEqualTo(expected);
+    }
+
 }
