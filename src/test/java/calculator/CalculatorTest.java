@@ -1,5 +1,7 @@
 package calculator;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -7,17 +9,28 @@ import static org.assertj.core.api.Assertions.*;
 
 class CalculatorTest {
 
+    private Calculator calculator;
+
+    @BeforeEach
+    void setUp() {
+        calculator = new Calculator();
+    }
+
+    @AfterEach
+    void tearDown() {
+        calculator = null;
+    }
+
     @Test
     void add_devrait_retouner_somme_des_deux_int()
     {
         //GIVEN
-        Calculator calculator = new Calculator();
         int opG = 5;
         int opD = 3;
         int expected = 8;
 
         //WHEN
-        int result =calculator.add(opG,opD);
+        int result = calculator.add(opG,opD);
 
         //THEN
         assertThat(result).isEqualTo(expected);
@@ -27,7 +40,6 @@ class CalculatorTest {
     void divide_devrait_retouner_quotient_des_deux_int()
     {
         //GIVEN
-        Calculator calculator = new Calculator();
         int opG = 6;
         int opD = 3;
         int expected = 2;
