@@ -46,6 +46,23 @@ class CalculatorTest {
     }
 
     @Test
+    void add_devrait_lancer_exception_si_somme_hors_limite()
+    {
+        //GIVEN
+        int opG = Integer.MAX_VALUE;
+        int opD = 1;
+
+        //WHEN
+        Throwable thrown = catchThrowable(() -> {
+            Calculator.add(opG, opD);
+        });
+        //THEN
+        assertThat(thrown).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Addition hors limite");
+    }
+
+
+    @Test
     void divide_devrait_retouner_quotient_des_deux_int()
     {
         //GIVEN
@@ -58,6 +75,23 @@ class CalculatorTest {
 
         //THEN
         assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void divide_devrait_lancer_exception_si_division_par_zero()
+    {
+        //GIVEN
+        int opG = 6;
+        int opD = 0;
+
+        //WHEN
+        Throwable thrown = catchThrowable(() -> {
+            Calculator.divide(opG, opD);
+        });
+
+        //WHEN //THEN
+        assertThat(thrown).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Division par zero impossible");
     }
 
     @Test

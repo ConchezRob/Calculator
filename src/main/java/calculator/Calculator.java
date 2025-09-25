@@ -5,10 +5,16 @@ import java.util.Set;
 
 public class Calculator {
     public static int add(int opG, int opD){
+        if(opG > 0 && opD > 0 && Integer.MAX_VALUE - opG < opD){
+            throw new IllegalArgumentException("Addition hors limite");
+        }
         return opG + opD;
     };
 
     public static int divide(int opG, int opD){
+        if(opD == 0){
+            throw new IllegalArgumentException("Division par zero impossible");
+        }
         return opG / opD;
     } ;
 
