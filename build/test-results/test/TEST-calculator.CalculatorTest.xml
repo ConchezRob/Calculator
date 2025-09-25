@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="calculator.CalculatorTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-09-25T09:13:22" hostname="PCVIUT469" time="2.366">
+  <properties/>
+  <testcase name="ensembleChiffre_devrait_retouner_ensemble_chiffre_nombre_negatif()" classname="calculator.CalculatorTest" time="1.49"/>
+  <testcase name="ensembleChiffre_devrait_retouner_ensemble_chiffre_nombre_zero()" classname="calculator.CalculatorTest" time="0.001"/>
+  <testcase name="add_devrait_retouner_somme_des_deux_int()" classname="calculator.CalculatorTest" time="0.087"/>
+  <testcase name="[1] 0, 1, 1" classname="calculator.CalculatorTest" time="0.141"/>
+  <testcase name="[2] 1, 2, 3" classname="calculator.CalculatorTest" time="0.003"/>
+  <testcase name="[3] -2, 2, 0" classname="calculator.CalculatorTest" time="0.004"/>
+  <testcase name="[4] 0, 0, 0" classname="calculator.CalculatorTest" time="0.003"/>
+  <testcase name="[5] -1, -2, -3" classname="calculator.CalculatorTest" time="0.002"/>
+  <testcase name="divide_devrait_lancer_exception_si_division_par_zero()" classname="calculator.CalculatorTest" time="0.02"/>
+  <testcase name="divide_devrait_retouner_quotient_des_deux_int()" classname="calculator.CalculatorTest" time="0.003"/>
+  <testcase name="ensembleChiffre_devrait_retouner_ensemble_chiffre_nombre_positif()" classname="calculator.CalculatorTest" time="0.001"/>
+  <testcase name="add_devrait_lancer_exception_si_somme_hors_limite()" classname="calculator.CalculatorTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
