@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 
+import java.util.Set;
+
 import static org.assertj.core.api.Assertions.*;
 
 
@@ -57,4 +59,30 @@ class CalculatorTest {
         //THEN
         assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void ensembleChiffre_devrait_retouner_ensemble_chiffre_nombre_positif() {
+        //GIVEN
+        int nombre = 12345;
+        Set<Integer> expected = Set.of(1, 2, 3, 4, 5);
+
+        //WHEN
+        Set<Integer> result = new Calculator().ensembleChiffre(nombre);
+
+        //THEN
+        assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void ensembleChiffre_devrait_retouner_ensemble_chiffre_nombre_negatif() {
+        //GIVEN
+        int nombre = -12345;
+        Set<Integer> expected = Set.of(1, 2, 3, 4, 5);
+
+        //WHEN
+        Set<Integer> result = new Calculator().ensembleChiffre(nombre);
+        //THEN
+        assertThat(result).isEqualTo(expected);
+    }
+
 }
